@@ -1,27 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Doctors</h1>
+<h1>All Doctors</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'New Doctor', new_doctor_path, class: 'btn btn-primary', style: "margin-bottom: 30px;" %>
 
-  <tbody>
-    <% @doctors.each do |doctor| %>
-      <tr>
-        <td><%= doctor.name %></td>
-        <td><%= link_to 'Show', doctor %></td>
-        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-        <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Doctor', new_doctor_path %>
+<% @doctors.each do |doctor| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h2><%= link_to doctor.name, doctor %></h2>
+    </div>
+  </div>
+<% end %>

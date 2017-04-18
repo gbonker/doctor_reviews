@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :doctor_id %><br>
-    <%= f.number_field :doctor_id %>
+    <%= f.collection_select :doctor_id, Doctor.order(:name), :id, :name, include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

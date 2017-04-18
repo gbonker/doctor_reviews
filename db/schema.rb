@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170417235136) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
-    t.integer  "doctor_id"
+    t.integer  "doctor_id", index: true
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

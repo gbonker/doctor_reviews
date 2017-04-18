@@ -1,9 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @doctor.name %>
-</p>
+<h1><%= @doctor.name %></h1>
 
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+<div class="pull-right">
+  <%= link_to 'Edit this Doctor', edit_doctor_path(@doctor), class: 'btn btn-default' %>
+  <%= link_to 'Delete this Doctor', @doctor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+</div>
+
+<h2>Reviews</h2>
+
+<% @reviews.each do |review| %>
+	<div class="panel panel-default">
+    <div class="panel-body">
+      <%= review.description %>
+      <%= link_to review, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pull-right' do %>
+        <i class="fa fa-times"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<h2>Review this doctor</h2>
+
+<%= form_for(@review) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :description, class: "form-control", rows: 3, placeholder: "Write a review..." %>
+    <%= f.text_field :doctor_id, value: @doctor.id, type: "hidden" %>
+  </div>
+  <%= f.submit "Submit Review", class: "btn btn-primary" %>
+<% end %>
