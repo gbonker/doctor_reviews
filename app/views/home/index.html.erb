@@ -5,13 +5,62 @@
   <div class="col-sm-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h3>Sign Up with CareDash to Edit your Provider Profile</h3>
+        <% if !user_signed_in? %>
+          <h3>Sign Up with CareDash to Edit your Provider Profile</h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="form-group row">
+              <%= f.label :first_name, class: 'col-md-4 col-form-label' %>
+              <div class="col-md-8">
+                <%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :last_name, class: 'col-md-4 col-form-label' %>
+              <div class="col-md-8">
+                <%= f.text_field :last_name, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :email, class: 'col-md-4 col-form-label' %>
+              <div class="col-md-8">
+                <%= f.email_field :email, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :password, class: 'col-md-4 col-form-label' %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+              <div class="col-md-8">
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <%= f.label :password_confirmation, class: 'col-md-4 col-form-label' %>
+              <div class="col-md-8">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+              </div>
+            </div>
+            <div class="pull-right">
+              <%= f.submit "Sign up", class: "btn btn-primary" %>
+              <%= link_to "Log in", new_user_session_path, class: "btn btn-default" %>
+            </div>
+          <% end %>
+        <% else %>
+          <h2>Thanks for logging in! Check out and rate our <%= link_to "doctors", doctors_path %>!</h2>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 <div class="row">
-  <h2 class="text-center">Reasons to Sign Up as a Provider on CareDash</h2>
+  <h2 class="text-center" style="margin-bottom: 40px;">Reasons to Sign Up as a Provider on CareDash</h2>
   <div class="col-sm-4">
     <%= image_tag "home1.jpg", class: "img-responsive center-block home-img" %>
     <h3 class="text-center">Headline</h3>
