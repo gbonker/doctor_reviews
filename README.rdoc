@@ -7,3 +7,4 @@ This application is used to list and review doctors. It is complete with authent
 * Bootstrap 3
 * Devise for authentication
 
+This app can be viewed live at https://doctorreviews.herokuapp.com/. Enjoy!
