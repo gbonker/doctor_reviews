@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
+
+#heroku deploying helper gem
+gem 'rails_12factor'
 
 gem 'font-awesome-rails'
 
@@ -6,6 +10,7 @@ gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+
 # use postgres for database so that I can deploy to Heroku
 gem 'pg'
 # Use SCSS for stylesheets
