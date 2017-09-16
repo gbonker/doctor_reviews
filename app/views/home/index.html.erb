@@ -6,7 +6,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <% if !user_signed_in? %>
-          <h3>Sign Up with CareDash to Edit your Provider Profile</h3>
+          <h3>Sign Up to Edit your Provider Profile</h3>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
 
@@ -60,23 +60,23 @@
   </div>
 </div>
 <div class="row">
-  <h2 class="text-center" style="margin-bottom: 40px;">Reasons to Sign Up as a Provider on CareDash</h2>
+  <h2 class="text-center" style="margin-bottom: 40px;">Reasons to Sign Up</h2>
   <div class="col-sm-4">
     <%= image_tag "home1.jpg", class: "img-responsive center-block home-img" %>
-    <h3 class="text-center">Headline</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex pulvinar, ullamcorper libero ut, eleifend orci. Maecenas eget odio vitae mi euismod tempus. Vivamus vitae turpis dui. Pellentesque ac leo non mi dapibus tincidunt. Sed cursus urna tristique auctor porttitor. Donec egestas hendrerit nisi eget ullamcorper. Vivamus interdum tempor quam, vitae porttitor enim vulputate id. Cras ornare eros diam, in molestie urna ornare et. Donec at sagittis ex.</p>
-    <%= link_to "Learn More", "#", class: "btn btn-primary" %>
+    <h3 class="text-center">Find a Doctor You Trust</h3>
+    <p>Read what others are saying about doctors in your area, and find one who fits your needs.</p>
+    <%= link_to "Find A Doctor", "/doctors", class: "btn btn-primary center-block" %>
   </div>
   <div class="col-sm-4">
     <%= image_tag "home2.jpg", class: "img-responsive center-block home-img" %>
-    <h3 class="text-center">Headline</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex pulvinar, ullamcorper libero ut, eleifend orci. Maecenas eget odio vitae mi euismod tempus. Vivamus vitae turpis dui. Pellentesque ac leo non mi dapibus tincidunt. Sed cursus urna tristique auctor porttitor. Donec egestas hendrerit nisi eget ullamcorper. Vivamus interdum tempor quam, vitae porttitor enim vulputate id. Cras ornare eros diam, in molestie urna ornare et. Donec at sagittis ex.</p>
-    <%= link_to "Learn More", "#", class: "btn btn-primary" %>
+    <h3 class="text-center">Review Doctors</h3>
+    <p>Help others in the community by letting them know about your experiences with the doctors you've visited.</p>
+    <%= link_to "Review a Doctor", "/doctors", class: "btn btn-primary center-block" %>
   </div>
   <div class="col-sm-4">
     <%= image_tag "home3.jpg", class: "img-responsive center-block home-img" %>
-    <h3 class="text-center">Headline</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex pulvinar, ullamcorper libero ut, eleifend orci. Maecenas eget odio vitae mi euismod tempus. Vivamus vitae turpis dui. Pellentesque ac leo non mi dapibus tincidunt. Sed cursus urna tristique auctor porttitor. Donec egestas hendrerit nisi eget ullamcorper. Vivamus interdum tempor quam, vitae porttitor enim vulputate id. Cras ornare eros diam, in molestie urna ornare et. Donec at sagittis ex.</p>
-    <%= link_to "Learn More", "#", class: "btn btn-primary" %>
+    <h3 class="text-center">Post New Doctors</h3>
+    <p>Have you visited a doctor that is not in our system yet? Create a profile for them and write their first review!</p>
+    <%= link_to "Add a New Doctor", "/doctors/new", class: "btn btn-primary center-block" %>
   </div>
 </div>

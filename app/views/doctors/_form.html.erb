@@ -16,4 +16,9 @@
     <%= f.text_field :name, class: 'form-control' %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% if params[:action] == "new" %>
+    <%= link_to 'Cancel', doctors_path, class: 'btn btn-default' %>
+  <% elsif params[:action] == "edit" %>
+    <%= link_to 'Cancel', @doctor, class: 'btn btn-default' %>
+  <% end %>
 <% end %>

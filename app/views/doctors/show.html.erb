@@ -1,7 +1,9 @@
+<%= link_to 'Back to All Doctors', doctors_path, class: 'btn btn-default' %>
+
 <h1><%= @doctor.name %></h1>
 
 <div class="pull-right">
-  <%= link_to 'Edit this Doctor', edit_doctor_path(@doctor), class: 'btn btn-default' %>
+  <%= link_to 'Edit this Doctor', edit_doctor_path(@doctor), class: 'btn btn-primary' %>
   <%= link_to 'Delete this Doctor', @doctor, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 </div>
 
